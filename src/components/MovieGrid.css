@@ -1,0 +1,33 @@
+/* ================================================= */
+/* GRID DE FILMES */
+/* ================================================= */
+
+.movies-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 35px 4%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 25px;
+}
+
+/* ================================================= */
+/* RESPONSIVIDADE */
+/* ================================================= */
+
+@media (max-width: 800px) {
+  .movies-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 20px 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .movies-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 15px;
+  }
+}

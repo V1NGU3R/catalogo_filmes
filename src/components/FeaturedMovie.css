@@ -1,0 +1,313 @@
+/* ================================================= */
+/* FILME EM DESTAQUE */
+/* ================================================= */
+
+.featured-movie {
+  position: relative;
+  width: 100%;
+  min-height: 560px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: #181818;
+}
+
+/* ================================================= */
+/* IMAGEM DE FUNDO */
+/* ================================================= */
+
+.featured-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.65;
+}
+
+.featured-no-background {
+  position: absolute;
+  inset: 0;
+  background: #181818;
+}
+
+/* ================================================= */
+/* SOBREPOSIÇÃO DA IMAGEM */
+/* ================================================= */
+
+.featured-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to right,
+    #111 0%,
+    rgba(17, 17, 17, 0.92) 28%,
+    rgba(17, 17, 17, 0.55) 60%,
+    rgba(17, 17, 17, 0.35) 100%
+  );
+}
+
+/* ================================================= */
+/* CONTEÚDO DO DESTAQUE */
+/* ================================================= */
+
+.featured-content {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 650px;
+  margin-left: 5%;
+  padding: 70px 30px;
+}
+
+.featured-label {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #ddd;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.8px;
+}
+
+.featured-content h2 {
+  max-width: 650px;
+  margin-bottom: 18px;
+  color: white;
+  font-size: 56px;
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+}
+
+.featured-meta {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 22px;
+  color: #ddd;
+  font-size: 14px;
+}
+
+.featured-content p {
+  max-width: 620px;
+  margin-bottom: 28px;
+  color: #ddd;
+  font-size: 16px;
+  line-height: 1.7;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ================================================= */
+/* BOTÃO DO DESTAQUE */
+/* ================================================= */
+
+.featured-button {
+  padding: 13px 19px;
+  background: white;
+  color: #111;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.featured-button:hover {
+  background: #ddd;
+  transform: translateY(-2px);
+}
+
+/* ================================================= */
+/* SETAS DO CARROSSEL */
+/* ================================================= */
+
+.featured-arrow {
+  position: absolute;
+  top: 50%;
+  width: 70px;
+  height: 120px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+  z-index: 30;
+  transform: translateY(-50%);
+  opacity: 0.7;
+  transition:
+    opacity 0.2s ease,
+    background 0.2s ease;
+}
+
+.featured-arrow-left {
+  left: 0;
+}
+
+.featured-arrow-right {
+  right: 0;
+}
+
+/* ================================================= */
+/* ÍCONE DAS SETAS */
+/* ================================================= */
+
+.featured-arrow span {
+  display: block;
+  width: 17px;
+  height: 17px;
+  border: solid white;
+  transition: transform 0.2s ease;
+}
+
+.featured-arrow-left span {
+  border-width: 0 0 3px 3px;
+  transform: rotate(45deg);
+}
+
+.featured-arrow-right span {
+  border-width: 3px 3px 0 0;
+  transform: rotate(45deg);
+}
+
+/* ================================================= */
+/* HOVER DAS SETAS */
+/* ================================================= */
+
+.featured-arrow:hover {
+  opacity: 1;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.35), transparent);
+}
+
+.featured-arrow-right:hover {
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.35), transparent);
+}
+
+.featured-arrow-left:hover span,
+.featured-arrow-right:hover span {
+  transform: rotate(45deg) scale(1.15);
+}
+
+/* ================================================= */
+/* INDICADORES DO CARROSSEL */
+/* ================================================= */
+
+.featured-indicators {
+  position: absolute;
+  left: 50%;
+  bottom: 25px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  z-index: 30;
+}
+
+.featured-indicator {
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  min-height: 8px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  transition:
+    width 0.25s ease,
+    background 0.25s ease,
+    transform 0.2s ease;
+}
+
+.featured-indicator.active {
+  width: 28px;
+  border-radius: 6px;
+  background: white;
+}
+
+.featured-indicator:hover {
+  background: white;
+  transform: scale(1.1);
+}
+
+/* ================================================= */
+/* RESPONSIVIDADE */
+/* ================================================= */
+
+@media (max-width: 800px) {
+  .featured-movie {
+    min-height: 500px;
+  }
+
+  .featured-content {
+    margin-left: 0;
+    padding: 50px 55px;
+  }
+
+  .featured-content h2 {
+    font-size: 40px;
+  }
+
+  .featured-content p {
+    font-size: 14px;
+    -webkit-line-clamp: 4;
+  }
+
+  .featured-arrow {
+    width: 50px;
+    height: 90px;
+  }
+
+  .featured-arrow-left {
+    left: 0;
+  }
+
+  .featured-arrow-right {
+    right: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .featured-movie {
+    min-height: 480px;
+  }
+
+  .featured-content {
+    padding: 45px 50px;
+  }
+
+  .featured-content h2 {
+    font-size: 32px;
+  }
+
+  .featured-arrow {
+    width: 42px;
+    height: 80px;
+  }
+
+  .featured-arrow span {
+    width: 14px;
+    height: 14px;
+    border-width: 0 0 2px 2px;
+  }
+
+  .featured-arrow-right span {
+    border-width: 2px 2px 0 0;
+  }
+
+  .featured-indicators {
+    bottom: 18px;
+  }
+}
